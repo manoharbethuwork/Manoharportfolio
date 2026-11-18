@@ -109,7 +109,6 @@ export const SKILLS: Skill[] = [
   { name: 'Python', image: 'icons/skills/python.svg' },
   { name: 'n8n', icon: 'ri-node-tree' },
   { name: 'Machine Learning', icon: 'ri-cpu-line' },
-  { name: 'Data Analysis', icon: 'ri-bar-chart-box-line' },
   { name: 'Power BI', icon: 'ri-pie-chart-2-line' },
   { name: 'Git & GitHub', image: 'icons/skills/github.svg' },
   { name: 'Azure', image: 'icons/skills/azure.svg' },
