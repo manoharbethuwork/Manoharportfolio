@@ -1,0 +1,20 @@
+<header class="navbar" [class.navbar--scrolled]="isScrolled() || menuOpen()">
+  <div class="navbar_container">
+    <a appSectionLink="home" class="navbar_logo" aria-label="BMR, back to top" (click)="closeMenu()">BMR</a>
+
+    <nav id="main-nav" class="navbar_links" [class.navbar_links--open]="menuOpen()" aria-label="Main navigation">
+      @for (link of links; track link.target) {
+      <a class="navbar_link" [appSectionLink]="link.target"
+        [class.navbar_link--active]="activeSection() === link.target"
+        [attr.aria-current]="activeSection() === link.target ? 'location' : null" (click)="closeMenu()">
+        {{ link.label }}
+      </a>
+      }
+    </nav>
+
+    <button type="button" class="navbar_toggle" aria-controls="main-nav" aria-label="Toggle menu"
+      [attr.aria-expanded]="menuOpen()" (click)="toggleMenu()">
+      <i [class]="menuOpen() ? 'ri-close-line' : 'ri-menu-line'" aria-hidden="true"></i>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,10 @@
+<ul class="social-links">
+  @for (link of links(); track link.label) {
+  <li>
+    <a class="social-links_item" [href]="link.url" [attr.target]="link.external ? '_blank' : null"
+      [attr.rel]="link.external ? 'noopener noreferrer' : null" [attr.aria-label]="link.label">
+      <i [class]="link.icon"></i>
+    </a>
+  </li>
+  }
+</ul>

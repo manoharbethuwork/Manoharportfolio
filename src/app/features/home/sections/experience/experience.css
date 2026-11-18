@@ -1,0 +1,31 @@
+.experience {
+  padding-top: var(--section-spacing);
+  padding-bottom: calc(var(--section-spacing) * 2);
+  background-color: var(--color-bg-tint);
+}
+
+.experience_list {
+  --marker-size: 36px;
+  --marker-gap: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+}
+
+.experience_list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--marker-size) / 2 - 1px);
+  width: 2px;
+  background-color: var(--color-border);
+}
+
+@media (max-width: 600px) {
+  .experience_list::before {
+    display: none;
+  }
+}

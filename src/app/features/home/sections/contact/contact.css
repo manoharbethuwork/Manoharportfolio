@@ -1,0 +1,119 @@
+.contact {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  --contact-card-width: 640px;
+}
+
+.contact_form {
+  display: grid;
+  gap: 20px;
+  max-width: var(--contact-card-width);
+  margin-inline: auto;
+  padding: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+}
+
+.contact_row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.field_label {
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.field_input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.9rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field_input::placeholder {
+  color: #64748b;
+}
+
+.field_input:focus {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+.field_input[aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+
+.field_textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.field_error {
+  color: var(--color-danger);
+  font-size: 0.78rem;
+}
+
+.contact_submit {
+  justify-content: center;
+  width: 100%;
+  padding: 14px 22px;
+  background: var(--gradient-accent);
+  box-shadow: 0 12px 24px -12px color-mix(in srgb, var(--color-accent) 70%, transparent);
+}
+
+.contact_submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.contact_success {
+  color: var(--color-success);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.contact_error {
+  color: var(--color-danger);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.contact_mail {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .contact_form {
+    padding: 20px;
+  }
+
+  .contact_row {
+    grid-template-columns: 1fr;
+  }
+
+  .field_input {
+    font-size: 1rem;
+  }
+}

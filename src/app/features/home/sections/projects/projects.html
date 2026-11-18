@@ -1,0 +1,20 @@
+<section id="projects" class="projects">
+  <div class="container">
+    <app-section-heading label="Projects" />
+
+    <ul class="projects_grid">
+      @for (project of projects; track project.title) {
+      <li>
+        <app-project-card [project]="project" />
+      </li>
+      }
+    </ul>
+
+    <div class="projects_action">
+      <a class="btn btn--primary" routerLink="/projects">
+        View Projects
+        <i class="ri-arrow-right-line" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>

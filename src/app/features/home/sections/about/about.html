@@ -1,0 +1,21 @@
+<section id="about" class="about">
+  <div class="container">
+    <app-section-heading label="About" />
+
+    <div class="about_layout">
+      <p class="about_text">{{ text }}</p>
+
+      <div class="about_cards">
+        @for (card of cards; track card.title) {
+        <article class="about_card">
+          <span class="about_card_icon" aria-hidden="true">
+            <i [class]="card.icon"></i>
+          </span>
+          <h3 class="about_card_title">{{ card.title }}</h3>
+          <p class="about_card_desc">{{ card.description }}</p>
+        </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

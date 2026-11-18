@@ -1,0 +1,20 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <app-section-heading label="Skills" />
+
+    <ul class="skills_grid">
+      @for (skill of skills; track skill.name) {
+      <li class="skill" tabindex="0" (mouseenter)="keepLabelOnScreen($event)" (focus)="keepLabelOnScreen($event)">
+        <span class="skill_icon" aria-hidden="true">
+          @if (skill.image) {
+          <img class="skill_img" [src]="skill.image" alt="" width="40" height="40" />
+          } @else {
+          <i [class]="skill.icon"></i>
+          }
+        </span>
+        <span class="skill_name">{{ skill.name }}</span>
+      </li>
+      }
+    </ul>
+  </div>
+</section>

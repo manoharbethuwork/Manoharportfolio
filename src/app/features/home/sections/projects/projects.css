@@ -1,0 +1,37 @@
+.projects {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+}
+
+.projects_grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+  list-style: none;
+}
+
+.projects_grid>li {
+  display: flex;
+}
+
+.projects_grid app-project-card {
+  width: 100%;
+}
+
+.projects_action {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+@media (max-width: 1199px) {
+  .projects_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .projects_grid {
+    grid-template-columns: 1fr;
+  }
+}

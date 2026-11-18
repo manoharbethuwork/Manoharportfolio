@@ -1,0 +1,24 @@
+<section id="home" class="hero">
+  <div class="hero_content">
+    <p class="hero_badge">
+      <span class="hero_badge_dot"></span>
+      Available
+    </p>
+
+    <h1 class="hero_name">{{ profile.name }}</h1>
+    <p class="hero_role">{{ profile.role }}</p>
+
+    <div class="hero_actions">
+      <a class="btn btn--primary" [href]="resumeUrl" target="_blank" rel="noopener noreferrer">
+        <i class="ri-download-2-line" aria-hidden="true"></i>
+        Resume
+      </a>
+      <a class="btn btn--outline" appSectionLink="contact">
+        <i class="ri-mail-line" aria-hidden="true"></i>
+        Contact Me
+      </a>
+    </div>
+
+    <app-social-links [links]="socialLinks" />
+  </div>
+</section>

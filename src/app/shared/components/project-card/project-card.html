@@ -1,0 +1,27 @@
+<article class="card" [class.card--link]="!!project().url">
+  @if (project().url; as link) {
+  <a class="card_link" [href]="link" [attr.target]="project().external ? '_blank' : null"
+    [attr.rel]="project().external ? 'noopener noreferrer' : null" [attr.aria-label]="'Open ' + project().title"></a>
+  }
+
+  <div class="card_media">
+    <img class="card_image" [src]="project().image" alt="" loading="lazy" />
+    <h3 class="card_title">{{ project().title }}</h3>
+  </div>
+
+  <div class="card_body">
+    @if (project().description) {
+    <p class="card_desc">{{ project().description }}</p>
+    }
+
+    <ul class="card_tags">
+      @if (project().technologies.length > 0) {
+      <ul class="card_tags">
+        @for (tech of project().technologies; track tech) {
+        <li><app-tech-tag [label]="tech" /></li>
+        }
+      </ul>
+      }
+    </ul>
+  </div>
+</article>

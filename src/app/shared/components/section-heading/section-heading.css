@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.section_heading {
+  margin-bottom: 70px;
+  margin-bottom: clamp(32px, 6vw, 70px);
+  text-align: center;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  font-weight: 650;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}

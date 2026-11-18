@@ -1,0 +1,13 @@
+<section id="experience" class="experience">
+  <div class="container">
+    <app-section-heading label="Work Experience" />
+
+    <ol class="experience_list">
+      @for (job of jobs; track job.company + job.period) {
+      <li>
+        <app-experience-item [job]="job" />
+      </li>
+      }
+    </ol>
+  </div>
+</section>

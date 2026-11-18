@@ -1,0 +1,71 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <app-section-heading label="Contact" />
+
+    <form class="contact_form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <div class="contact_row">
+        <div class="field">
+          <label class="field_label" for="contact-name">Name</label>
+          <input id="contact-name" class="field_input" type="text" formControlName="name" placeholder="Full Name"
+            autocomplete="name" maxlength="100" [attr.aria-invalid]="isInvalid('name')" />
+          @if (isInvalid('name')) {
+          <p class="field_error">Please enter your name.</p>
+          }
+        </div>
+
+        <div class="field">
+          <label class="field_label" for="contact-email">Email</label>
+          <input id="contact-email" class="field_input" type="email" formControlName="email"
+            placeholder="you@example.com" autocomplete="email" maxlength="150"
+            [attr.aria-invalid]="isInvalid('email')" />
+          @if (isInvalid('email')) {
+          <p class="field_error">Please enter a valid email.</p>
+          }
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field_label" for="contact-subject">Subject</label>
+        <input id="contact-subject" class="field_input" type="text" formControlName="subject" placeholder="Subject..."
+          maxlength="150" [attr.aria-invalid]="isInvalid('subject')" />
+        @if (isInvalid('subject')) {
+        <p class="field_error">Please add a short subject.</p>
+        }
+      </div>
+
+      <div class="field">
+        <label class="field_label" for="contact-message">Message</label>
+        <textarea id="contact-message" class="field_input field_textarea" rows="5" formControlName="message"
+          placeholder="I would love to listen…" maxlength="2000" [attr.aria-invalid]="isInvalid('message')"></textarea>
+        @if (isInvalid('message')) {
+        <p class="field_error">Please write at least 10 characters.</p>
+        }
+      </div>
+
+      <!-- Spam trap for bots (hidden from people) -->
+      <input type="checkbox" formControlName="botcheck" hidden tabindex="-1" autocomplete="off" />
+
+      <button type="submit" class="btn btn--primary contact_submit" [disabled]="status() === 'sending'">
+        <i class="ri-send-plane-line" aria-hidden="true"></i>
+        @if (status() === 'sending') {
+        Sending…
+        } @else {
+        Send Message
+        }
+      </button>
+
+      @if (status() === 'sent') {
+      <p class="contact_success" role="status">
+        Thanks for reaching out. I’ll get back to you soon.
+      </p>
+      }
+
+      @if (status() === 'error') {
+      <p class="contact_error" role="alert">
+        Something went wrong while sending your message. Please try again, or email me at
+        <a class="contact_mail" [href]="'mailto:' + email">{{ email }}</a>.
+      </p>
+      }
+    </form>
+  </div>
+</section>

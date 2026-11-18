@@ -1,0 +1,19 @@
+<article class="card">
+  <header class="card_header">
+    <h3 class="card_degree">{{ record().degree }}</h3>
+    <span class="card_score">{{ record().score }}</span>
+  </header>
+
+  <p class="card_institution">{{ record().institution }}</p>
+
+  <ul class="card_meta">
+    <li>
+      <i class="ri-map-pin-line" aria-hidden="true"></i>
+      {{ record().location }}
+    </li>
+    <li>
+      <i class="ri-calendar-line" aria-hidden="true"></i>
+      {{ record().period }}
+    </li>
+  </ul>
+</article>
